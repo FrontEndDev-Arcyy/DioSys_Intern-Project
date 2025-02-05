@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 3 / 9; }
+    .div2 { grid-area: 3 / 1 / 7 / 5; }
+    .div3 { grid-area: 3 / 5 / 5 / 9; }
+    .div4 { grid-area: 5 / 5 / 7 / 9; }
+
+
+/* Targets top-level menu items */
+.customMenu .ant-menu-item,
+.customMenu .ant-menu-item:active,
+.customMenu .ant-menu-item:hover,
+.customMenu .ant-menu-item:focus,
+.customMenu .ant-menu-item-selected,
+/* Targets submenu items */
+.customMenu .ant-menu-submenu-title,
+.customMenu .ant-menu-submenu-title:active,
+.customMenu .ant-menu-submenu-title:hover,
+.customMenu .ant-menu-submenu-title:focus,
+.customMenu .ant-menu-submenu-selected,
+/* Specificity for nested items within submenus */
+.customMenu .ant-menu-submenu .ant-menu-item,
+.customMenu .ant-menu-submenu .ant-menu-item:active,
+.customMenu .ant-menu-submenu .ant-menu-item:hover,
+.customMenu .ant-menu-submenu .ant-menu-item:focus,
+.customMenu .ant-menu-submenu .ant-menu-item-selected {
+  color: white !important; /* Ensures text is always white */
+  background-color: transparent !important; /* Avoids overriding the background color */
+}
+
+.customMenu .ant-menu-item-selected,
+.customMenu .ant-menu-submenu-item-selected,
+.customMenu .ant-menu-item-active,
+.customMenu .ant-menu-submenu-item-active {
+  background-color: #0D5B10 !important; /* Specific background color for active items */
+}
