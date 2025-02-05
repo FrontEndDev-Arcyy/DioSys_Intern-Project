@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import PageUsers from "../views/private/PageUsers/PageUsers";
 
 import LandingPage from "../layouts/LandingPage";
-import DashboardCard from "../views/contents/DashboardCards/DashboardCard";
+import DashboardCard from "../views/contents/DashboardPage/DashboardCards/DashboardCard";
+import MatrimonyPage from "../views/contents/SacramentsPage/MatrimonyRecords/MatrimonyPage";
+
 
 export default function Routers() {
     return (
@@ -16,6 +18,8 @@ export default function Routers() {
                 <Route path="/" element={<LandingPage />} />
 
                 <Route path="/cards" element={<DashboardCard />} />
+
+                <Route path="/matrimony" element={<MatrimonyPage />} />
 
             </Routes>
         </Router>

@@ -17,31 +17,26 @@
     .div4 { grid-area: 5 / 5 / 7 / 9; }
 
 
-/* Targets top-level menu items */
+/* Existing styles for all menu items */
 .customMenu .ant-menu-item,
-.customMenu .ant-menu-item:active,
 .customMenu .ant-menu-item:hover,
 .customMenu .ant-menu-item:focus,
-.customMenu .ant-menu-item-selected,
-/* Targets submenu items */
 .customMenu .ant-menu-submenu-title,
-.customMenu .ant-menu-submenu-title:active,
 .customMenu .ant-menu-submenu-title:hover,
 .customMenu .ant-menu-submenu-title:focus,
-.customMenu .ant-menu-submenu-selected,
-/* Specificity for nested items within submenus */
 .customMenu .ant-menu-submenu .ant-menu-item,
-.customMenu .ant-menu-submenu .ant-menu-item:active,
 .customMenu .ant-menu-submenu .ant-menu-item:hover,
-.customMenu .ant-menu-submenu .ant-menu-item:focus,
-.customMenu .ant-menu-submenu .ant-menu-item-selected {
-  color: white !important; /* Ensures text is always white */
-  background-color: transparent !important; /* Avoids overriding the background color */
+.customMenu .ant-menu-submenu .ant-menu-item:focus {
+  color: white !important; /* Ensures text is white when not active */
+  background-color: transparent !important;
+  font-weight: bold !important;
 }
 
+/* Styles for selected and active items */
 .customMenu .ant-menu-item-selected,
 .customMenu .ant-menu-submenu-item-selected,
 .customMenu .ant-menu-item-active,
 .customMenu .ant-menu-submenu-item-active {
-  background-color: #0D5B10 !important; /* Specific background color for active items */
+  color: #0D5B10 !important; /* Font color when active */
+  background-color: white !important; /* Background color when active */
 }
