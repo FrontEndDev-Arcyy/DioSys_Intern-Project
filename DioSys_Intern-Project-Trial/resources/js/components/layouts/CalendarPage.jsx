@@ -15,8 +15,8 @@ import {
 } from '@ant-design/icons';
 
 
-import MemorialModal from '../views/contents/SacramentsPage/MemorialRecords/MemorialModal';
-import MemorialTable from '../views/contents/SacramentsPage/MemorialRecords/MemorialTable';
+
+import Calendar from '../views/contents/CalendarPage/Calendar';
 
 
 const { Header, Content, Sider } = Layout;
@@ -98,12 +98,10 @@ return (
             <Content style={{ margin: '0 16px' }}>
                             <Breadcrumb style={{ margin: '16px 0' }}>
                                 <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
-                                <Breadcrumb.Item><Link to="">Sacrament</Link></Breadcrumb.Item>
-                                <Breadcrumb.Item>Memorial Records</Breadcrumb.Item>
+                                <Breadcrumb.Item><Link to="">Dashboard</Link></Breadcrumb.Item>
                             </Breadcrumb>
-                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                    <MemorialModal />
-                    <MemorialTable />
+                <div style={{ padding: 24, background: '#fff', minHeight: 360 }} className="parent">
+                    <Calendar />
                 </div>
             </Content>
         </Layout>

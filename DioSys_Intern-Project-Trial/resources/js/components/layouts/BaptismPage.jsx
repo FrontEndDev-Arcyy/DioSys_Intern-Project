@@ -50,7 +50,7 @@ const items = [
   getItem(<Link to="/">Dashboard</Link>, '1', <HomeOutlined />),
   getItem('Sacrament', '2', <DesktopOutlined />, sacramentItems),
   getItem(<Link to="/">Employees</Link>, '3', <TeamOutlined />),
-  getItem(<Link to="/">Calendar</Link>, '4', <CalendarOutlined />),
+  getItem(<Link to="/calendar">Calendar</Link>, '4', <CalendarOutlined />),
   getItem(<Link to="/">Reports</Link>, '5', <ProjectOutlined />),
   getItem(<Link to="/">Users</Link>, '6', <TeamOutlined />),
   getItem(<Link to="/">System Settings</Link>, '7', <SettingOutlined />),
@@ -96,6 +96,11 @@ return (
           </Row>
         </Header>
             <Content style={{ margin: '0 16px' }}>
+                            <Breadcrumb style={{ margin: '16px 0' }}>
+                                <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
+                                <Breadcrumb.Item><Link to="">Sacrament</Link></Breadcrumb.Item>
+                                <Breadcrumb.Item>Baptism Records</Breadcrumb.Item>
+                            </Breadcrumb>
                 <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
                     <BaptismTable />
                 </div>

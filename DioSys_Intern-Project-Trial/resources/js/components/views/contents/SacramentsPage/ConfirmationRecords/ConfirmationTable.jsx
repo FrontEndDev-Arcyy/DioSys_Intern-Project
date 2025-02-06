@@ -4,27 +4,33 @@ import { SearchOutlined } from "@ant-design/icons";
 
 const columns = [
   {
-    title: "Full Name",
-    dataIndex: "fullName",
+    title: "Groom Name",
+    dataIndex: "groom",
     key: "groom",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Baptism Date",
-    dataIndex: "baptismDate",
+    title: "Bride Name",
+    dataIndex: "bride",
     key: "bride",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Baptismal Place",
-    dataIndex: "baptismalPlace",
+    title: "Address",
+    dataIndex: "address",
     key: "address",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Officiating Category",
-    dataIndex: "officiateCategory",
+    title: "Date Married",
+    dataIndex: "dateMarried",
     key: "dateMarried",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+  {
+    title: "Officiating Category",
+    dataIndex: "category",
+    key: "category",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
@@ -43,7 +49,7 @@ const columns = [
 ];
 
 const data = [
-  { key: "1", fullName: "Hello", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
+  { key: "1", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
   { key: "2", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
   { key: "3", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
   { key: "4", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },

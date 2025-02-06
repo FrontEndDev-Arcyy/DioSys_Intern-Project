@@ -15,8 +15,9 @@ import {
 } from '@ant-design/icons';
 
 
-import MatrimonyPage from '../views/contents/SacramentsPage/MatrimonyRecords/MatrimonyPage';
-import DashboardPage from './DashboardPage';
+import MatrimonyTable from '../views/contents/SacramentsPage/MatrimonyRecords/MatrimonyTable';
+import MatrimonyModial from '../views/contents/SacramentsPage/MatrimonyRecords/MatrimonyModial';
+
 
 
 const { Header, Content, Sider } = Layout;
@@ -50,7 +51,7 @@ const items = [
   getItem(<Link to="/">Dashboard</Link>, '1', <HomeOutlined />),
   getItem('Sacrament', '2', <DesktopOutlined />, sacramentItems),
   getItem(<Link to="/">Employees</Link>, '3', <TeamOutlined />),
-  getItem(<Link to="/">Calendar</Link>, '4', <CalendarOutlined />),
+  getItem(<Link to="/calendar">Calendar</Link>, '4', <CalendarOutlined />),
   getItem(<Link to="/">Reports</Link>, '5', <ProjectOutlined />),
   getItem(<Link to="/">Users</Link>, '6', <TeamOutlined />),
   getItem(<Link to="/">System Settings</Link>, '7', <SettingOutlined />),
@@ -96,8 +97,14 @@ return (
           </Row>
         </Header>
             <Content style={{ margin: '0 16px' }}>
+                <Breadcrumb style={{ margin: '16px 0' }}>
+                    <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
+                    <Breadcrumb.Item><Link to="">Sacrament</Link></Breadcrumb.Item>
+                    <Breadcrumb.Item>Matrimony Records</Breadcrumb.Item>
+                </Breadcrumb>
                 <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                    <MatrimonyPage />
+                    <MatrimonyModial />
+                    <MatrimonyTable />
                 </div>
             </Content>
         </Layout>

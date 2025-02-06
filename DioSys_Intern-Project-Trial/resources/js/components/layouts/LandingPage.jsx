@@ -16,7 +16,7 @@ import {
 
 
 
-import DashboardPage from './DashboardPage';
+import DashboardCard from '../views/contents/DashboardPage/DashboardCards/DashboardCard';
 
 
 const { Header, Content, Sider } = Layout;
@@ -50,7 +50,7 @@ const items = [
   getItem(<Link to="/">Dashboard</Link>, '1', <HomeOutlined />),
   getItem('Sacrament', '2', <DesktopOutlined />, sacramentItems),
   getItem(<Link to="/">Employees</Link>, '3', <TeamOutlined />),
-  getItem(<Link to="/">Calendar</Link>, '4', <CalendarOutlined />),
+  getItem(<Link to="/calendar">Calendar</Link>, '4', <CalendarOutlined />),
   getItem(<Link to="/">Reports</Link>, '5', <ProjectOutlined />),
   getItem(<Link to="/">Users</Link>, '6', <TeamOutlined />),
   getItem(<Link to="/">System Settings</Link>, '7', <SettingOutlined />),
@@ -96,8 +96,15 @@ return (
           </Row>
         </Header>
             <Content style={{ margin: '0 16px' }}>
-                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                    <DashboardPage />
+                            <Breadcrumb style={{ margin: '16px 0' }}>
+                                <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
+                                <Breadcrumb.Item><Link to="">Dashboard</Link></Breadcrumb.Item>
+                            </Breadcrumb>
+                <div style={{ padding: 24, background: '#fff', minHeight: 360 }} className="parent">
+                    <div class="div1"><DashboardCard /></div>
+                    <div class="div2"> </div>
+                    <div class="div3"> </div>
+                    <div class="div4"> </div>
                 </div>
             </Content>
         </Layout>
