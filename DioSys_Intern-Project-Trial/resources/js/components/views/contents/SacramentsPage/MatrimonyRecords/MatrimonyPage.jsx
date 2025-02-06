@@ -2,8 +2,6 @@ import React, { useRef, useState } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 import { Button, Input, Space, Table } from 'antd';
 
-// import Header from '../../../../layouts/Header';
-import LandingPage from '../../../../layouts/LandingPage';
 
 // Data for the table
 const data = [
@@ -128,7 +126,6 @@ const MatrimonyPage = () => {
 
   return (
     <div>
-        <LandingPage />
       <Table columns={columns} dataSource={data} />
     </div>
   );

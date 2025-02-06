@@ -15,8 +15,9 @@ import {
 } from '@ant-design/icons';
 
 
-import MatrimonyPage from '../views/contents/SacramentsPage/MatrimonyRecords/MatrimonyPage';
-import DashboardPage from './DashboardPage';
+import MemorialModal from '../views/contents/SacramentsPage/MemorialRecords/MemorialModal';
+import MemorialTable from '../views/contents/SacramentsPage/MemorialRecords/MemorialTable';
+import DashboardBreadcrumb from '../views/contents/DashboardPage/DashboardBreadcumbs/DashboardBreadcumb';
 
 
 const { Header, Content, Sider } = Layout;
@@ -97,7 +98,9 @@ return (
         </Header>
             <Content style={{ margin: '0 16px' }}>
                 <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                    <MatrimonyPage />
+                    <DashboardBreadcrumb />
+                    <MemorialModal />
+                    <MemorialTable />
                 </div>
             </Content>
         </Layout>

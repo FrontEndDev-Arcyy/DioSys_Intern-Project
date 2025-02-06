@@ -15,7 +15,8 @@ import {
 } from '@ant-design/icons';
 
 
-import DashboardCard from '../views/contents/DashboardPage/DashboardCards/DashboardCard';
+
+import DashboardPage from './DashboardPage';
 
 
 const { Header, Content, Sider } = Layout;
@@ -95,6 +96,9 @@ return (
           </Row>
         </Header>
             <Content style={{ margin: '0 16px' }}>
+                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+                    <DashboardPage />
+                </div>
             </Content>
         </Layout>
     </Layout>

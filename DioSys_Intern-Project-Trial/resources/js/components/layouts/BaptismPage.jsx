@@ -15,8 +15,8 @@ import {
 } from '@ant-design/icons';
 
 
-import MatrimonyPage from '../views/contents/SacramentsPage/MatrimonyRecords/MatrimonyPage';
-import DashboardPage from './DashboardPage';
+
+import BaptismTable from '../views/contents/SacramentsPage/BaptismRecords/BaptismTable'
 
 
 const { Header, Content, Sider } = Layout;
@@ -97,7 +97,7 @@ return (
         </Header>
             <Content style={{ margin: '0 16px' }}>
                 <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                    <MatrimonyPage />
+                    <BaptismTable />
                 </div>
             </Content>
         </Layout>

@@ -6,20 +6,30 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import PageAbout from "../views/public/PageAbout/PageAbout";
 // import PageUsers from "../views/private/PageUsers/PageUsers";
 
+import LoginPage from "../layouts/LoginPage";
 import LandingPage from "../layouts/LandingPage";
-import DashboardCard from "../views/contents/DashboardPage/DashboardCards/DashboardCard";
-import MatrimonyPage from "../views/contents/SacramentsPage/MatrimonyRecords/MatrimonyPage";
+import DashboardPage from "../layouts/DashboardPage";
+import MatrimonyPage from "../layouts/MatrimonyPage";
+import MemorialPage from "../layouts/MemorialPage";
+import BaptismPage from "../layouts/BaptismPage";
 
 
 export default function Routers() {
     return (
         <Router>
             <Routes>
+
+                <Route path="/login" element={<LoginPage />} />
+
                 <Route path="/" element={<LandingPage />} />
 
-                <Route path="/cards" element={<DashboardCard />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
 
                 <Route path="/matrimony" element={<MatrimonyPage />} />
+
+                <Route path="/memorial" element={<MemorialPage />} />
+
+                <Route path="/baptism" element={<BaptismPage />} />
 
             </Routes>
         </Router>

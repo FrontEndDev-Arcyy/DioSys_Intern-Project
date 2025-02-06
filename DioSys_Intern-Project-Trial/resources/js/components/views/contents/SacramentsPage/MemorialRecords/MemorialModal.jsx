@@ -37,7 +37,7 @@ const AddRecordModal = () => {
             padding: "8px 20px",
           }}
         >
-          + Add
+           Add
         </Button>
 
         <Upload beforeUpload={() => false} showUploadList={false}>
@@ -91,14 +91,64 @@ const AddRecordModal = () => {
       </div>
 
       {/* Add Modal */}
-      <Modal title="Add New Record" open={isAddModalOpen} onOk={handleAddOk} onCancel={handleAddCancel}>
-        <Input placeholder="Groom Name" style={{ marginBottom: "10px" }} />
-        <Input placeholder="Bride Name" style={{ marginBottom: "10px" }} />
-        <Input placeholder="Address" style={{ marginBottom: "10px" }} />
-        <Input placeholder="Date Married" type="date" style={{ marginBottom: "10px" }} />
-        <Input placeholder="Officiating Category" style={{ marginBottom: "10px" }} />
-        <Input placeholder="Status" style={{ marginBottom: "10px" }} />
-      </Modal>
+      <Modal 
+  title="Form" 
+  open={isAddModalOpen} 
+  onOk={handleAddOk} 
+  onCancel={handleAddCancel}
+  width={800}
+  footer={null} // ✅ Removes default "OK" and "Cancel" buttons
+>
+  {/* Parishioner Information */}
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px" }}>PARISHIONER INFORMATION</h3>
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+    <Input placeholder="First Name" />
+    <Input placeholder="Middle Name" />
+    <Input placeholder="Last Name" />
+    <Input placeholder="Gender" />
+    <Input placeholder="Residence" />
+    <Input placeholder="Birthdate" type="date" />
+    <Input placeholder="Place of Birth" />
+    <Input placeholder="Place of Death" />
+    <Input placeholder="Date of Death" type="date" />
+    <Input placeholder="Age at the Time of Death" />
+    <Input placeholder="E-mail" />
+  </div>
+
+  {/* Family Information */}
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px" }}>FAMILY INFORMATION</h3>
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+    <Input placeholder="Spouse First Name" />
+    <Input placeholder="Spouse Middle Name" />
+    <Input placeholder="Spouse Last Name" />
+  </div>
+  <Input.TextArea placeholder="Name of Children" rows={3} style={{ marginBottom: "10px" }} />
+
+  {/* Burial Information */}
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px" }}>BURIAL INFORMATION</h3>
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+    <Input placeholder="Place of Burial" />
+    <Input placeholder="Date of Burial" type="date" />
+    <Input placeholder="Officiating Priest" />
+  </div>
+
+  {/* Data Privacy */}
+  <div style={{ background: "#FAFAFA", border: "1px solid #E0E0E0", padding: "10px", borderRadius: "5px", marginBottom: "10px" }}>
+    <h4 style={{ color: "red", fontWeight: "bold" }}>DATA PRIVACY ACT OF 2012</h4>
+    <p style={{ fontSize: "12px" }}>
+      The processing of personal information shall be allowed, subject to compliance with the requirements of this Act
+      and other laws allowing disclosure of information to the public and adherence to the principles of transparency,
+      legitimate purpose, and proportionality.
+    </p>
+  </div>
+
+  {/* Action Buttons */}
+  <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
+    <Button style={{ borderColor: "#0D5B10", color: "#0D5B10" }}>Cancel</Button>
+    <Button type="primary" style={{ background: "#0D5B10", borderColor: "#0D5B10" }}>Save</Button>
+  </div>
+</Modal>
+
 
       {/* Active Modal */}
       <Modal title="Active Records" open={isActiveModalOpen} onOk={handleActiveOk} onCancel={handleActiveCancel}>
