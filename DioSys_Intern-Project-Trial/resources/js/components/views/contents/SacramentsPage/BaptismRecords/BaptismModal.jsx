@@ -63,7 +63,7 @@ const AddRecordModal = () => {
           type="primary"
           onClick={showActiveModal}
           style={{
-            backgroundColor: "#73C041", 
+            backgroundColor: "#73C041", // Light green color
             borderColor: "#73C041",
             color: "white",
             fontWeight: "bold",
@@ -97,10 +97,10 @@ const AddRecordModal = () => {
   onOk={handleAddOk} 
   onCancel={handleAddCancel}
   width={800}
-  footer={null} // Removes default "OK" and "Cancel" buttons
+  footer={null} //  Removes default "OK" and "Cancel" buttons
 >
   {/* Parishioner Information */}
-  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px" }}>PARISHIONER INFORMATION</h3>
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>PARISHIONER INFORMATION</h3>
   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
     <Input placeholder="First Name" />
     <Input placeholder="Middle Name" />
@@ -115,25 +115,61 @@ const AddRecordModal = () => {
     <Input placeholder="E-mail" />
   </div>
 
-  {/* Family Information */}
-  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px" }}>FAMILY INFORMATION</h3>
-  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
-    <Input placeholder="Spouse First Name" />
-    <Input placeholder="Spouse Middle Name" />
-    <Input placeholder="Spouse Last Name" />
+  {/* Parents Information */}
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>PARENTS INFORMATION</h3>
+  <p style={{ color:"#0D5B10", fontWeight: "bold" }}>Father's Information</p>
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+    <Input placeholder="First Name" />
+    <Input placeholder="Middle Name" />
+    <Input placeholder="Last Name" />
+    <Input placeholder="Residence" />
+    <Input placeholder="Email" />
+    <Input placeholder="Gender" />
+    <Input placeholder="Birthdate" type="date" />
+    <Input placeholder="Age" />
+    <Input placeholder="Residence" />
   </div>
-  <Input.TextArea placeholder="Name of Children" rows={3} style={{ marginBottom: "10px" }} />
+  <p style={{ color:"#0D5B10", fontWeight: "bold" }}>Mother's Information</p>
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+    <Input placeholder="First Name" />
+    <Input placeholder="Middle Name" />
+    <Input placeholder="Last Name" />
+    <Input placeholder="Residence" />
+    <Input placeholder="Email" />
+    <Input placeholder="Gender" />
+    <Input placeholder="Birthdate" type="date" />
+    <Input placeholder="Age" />
+    <Input placeholder="Residence" />
+  </div>
 
-  {/* Burial Information */}
-  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px" }}>BURIAL INFORMATION</h3>
+  {/* Baptismal Information */}
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>BAPTISMAL INFORMATION</h3>
   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
-    <Input placeholder="Place of Burial" />
-    <Input placeholder="Date of Burial" type="date" />
+    <Input placeholder="Date of Baptism" type="date" />
+    <Input placeholder="Place of Baptism" />
     <Input placeholder="Officiating Priest" />
+    <Input placeholder="Remarks" />
   </div>
+
+  {/* Godparents Information */}
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>GODPARENTS INFORMATION</h3>
+  <p style={{ color:"#0D5B10", fontWeight: "bold" }}>Godparent 1</p>
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+    <Input placeholder="First Name" />
+    <Input placeholder="Middle Name" />
+    <Input placeholder="Last Name" />
+    <Input placeholder="Residence" />
+    <Input placeholder="Email" />
+    <Input placeholder="Gender" />
+    <Input placeholder="Birthdate" type="date" />
+    <Input placeholder="Age" />
+    <Input placeholder="Residence" />
+  </div>
+
+  <Button type="primary" style={{ background: "#0D5B10", borderColor: "#0D5B10", display:"flex", justifySelf:"end" }}>Add Godparent</Button>
 
   {/* Data Privacy */}
-  <div style={{ background: "#FAFAFA", border: "1px solid #E0E0E0", padding: "10px", borderRadius: "5px", marginBottom: "10px" }}>
+  <div style={{ background: "#FAFAFA", border: "1px solid #E0E0E0", padding: "10px", borderRadius: "5px", marginBottom: "10px", marginTop: "10px" }}>
     <h4 style={{ color: "red", fontWeight: "bold" }}>DATA PRIVACY ACT OF 2012</h4>
     <p style={{ fontSize: "12px" }}>
       The processing of personal information shall be allowed, subject to compliance with the requirements of this Act

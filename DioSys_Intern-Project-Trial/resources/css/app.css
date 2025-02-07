@@ -40,3 +40,116 @@
   color: #0D5B10 !important; /* Font color when active */
   background-color: white !important; /* Background color when active */
 }
+
+/* General Calendar Layout */
+.calendar-container {
+  display: flex;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Left Sidebar (Filter) */
+.filter-panel {
+  width: 20%;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+}
+
+.filter-panel h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  border-bottom: 3px solid #a5d64f; /* Green underline */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Main Calendar Section */
+.calendar-section {
+  width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header button {
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* View Options */
+.view-options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.view-options button {
+  font-size: 14px;
+  color: black;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.view-options .active-view {
+  font-weight: bold;
+  border-bottom: 2px solid #a5d64f; /* Green underline for active tab */
+}
+
+/* Month Header */
+.ant-picker-calendar-header {
+  text-align: center !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Calendar Events */
+.events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.events .ant-badge-status {
+  width: 100%;
+  overflow: hidden;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Styling for Month Data (if needed) */
+.notes-month {
+  font-size: 28px;
+  text-align: center;
+}
+
+.notes-month section {
+  font-size: 28px;
+}
+
+/* Adjusts the table layout to make it cleaner */
+.ant-picker-cell {
+  height: 80px; /* Adjust height for better spacing */
+}
+
+.ant-picker-calendar-date {
+  padding: 8px;
+}
+
+/* Ensures today's date button is clear and prominent */
+.ant-picker-calendar-date-today {
+  border-radius: 50%;
+  background-color: rgba(165, 214, 79, 0.2);
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import { Table, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import ConfirmationModal from "./ConfirmationModal"; // ✅ Import the modal component
 
 const columns = [
   {
@@ -11,15 +10,15 @@ const columns = [
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Place of Confirmation",
-    dataIndex: "placeOfConfirmation",
-    key: "placeOfConfirmation",
+    title: "Place of Communion",
+    dataIndex: "placeOfCommunion",
+    key: "placeOfCommunion",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Date of Confirmation",
-    dataIndex: "dateOfConfirmation",
-    key: "dateOfConfirmation",
+    title: "Date of Communion",
+    dataIndex: "dateOfCommunion",
+    key: "dateOfCommunion",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
@@ -38,27 +37,24 @@ const columns = [
     title: "Actions",
     key: "actions",
     render: () => (
-      <span style={{ color: "black" }}>⚙️</span> // Placeholder for actions
+      <span style={{ color: "black" }}>⚙️</span> // Using an icon like your image
     ),
   },
 ];
 
 const data = [
-  { key: "1", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "2", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "3", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "4", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "5", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "6", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "1", fullName: "Cell Data", placeOfCommunion: "Cell Data", dateOfCommunion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "2", fullName: "Cell Data", placeOfCommunion: "Cell Data", dateOfCommunion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "3", fullName: "Cell Data", placeOfCommunion: "Cell Data", dateOfCommunion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "4", fullName: "Cell Data", placeOfCommunion: "Cell Data", dateOfCommunion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "5", fullName: "Cell Data", placeOfCommunion: "Cell Data", dateOfCommunion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "6", fullName: "Cell Data", placeOfCommunion: "Cell Data", dateOfCommunion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data", actions: "Cell Data" },
 ];
 
-const ConfirmationTable = () => {
+const TableComponent = () => {
   return (
     <div style={{ padding: "20px", background: "white", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
       
-      {/* Add Button & Upload File */}
-      <ConfirmationModal /> {/* ✅ Renders the add record button and modal */}
-
       {/* Search Bar */}
       <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: "10px" }}>
         <Input
@@ -83,4 +79,4 @@ const ConfirmationTable = () => {
   );
 };
 
-export default ConfirmationTable;
+export default TableComponent;

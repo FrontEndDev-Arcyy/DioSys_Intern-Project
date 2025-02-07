@@ -15,8 +15,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCross, faChurch } from '@fortawesome/free-solid-svg-icons';
 
-import ConversionModal from '../views/contents/SacramentsPage/ConversionRecords/ConversionModal';
-import ConversionTable from '../views/contents/SacramentsPage/ConversionRecords/ConversionTable';
+import DashboardCard from '../views/contents/DashboardPage/DashboardCards/DashboardCard';
 import { Breadcrumb, Layout, Menu, theme, Row, Col, Avatar } from 'antd';
 
 const { Header, Content, Sider } = Layout;
@@ -80,7 +79,7 @@ const App = () => {
             <div className="logo" style={{ padding: '16px', textAlign: 'center' }}>
                   <img src="/logo/A letter Logo design.png" alt="logo" style={{ width: '100%' }} />
             </div>
-        <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" openKeys={(openKeys)} onOpenChange={handleOpenChange} items={items} style={{ background: '#0D5B10'}} className='customMenu'/>
+        <Menu theme="light" defaultSelectedKeys={['']} mode="inline" openKeys={(openKeys)} onOpenChange={handleOpenChange} items={items} style={{ background: '#0D5B10'}} className='customMenu'/>
       </Sider>
       <Layout>
       <Header style={{ padding: 0, backgroundColor: 'white', lineHeight: '64px' }}>
@@ -97,8 +96,11 @@ const App = () => {
                 <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
                 <Breadcrumb.Item><Link to="">Dashboard</Link></Breadcrumb.Item>
             </Breadcrumb>
-          <div style={{ padding: 24, minHeight: 360, background: colorBgContainer, borderRadius: borderRadiusLG }} >
-            <ConversionTable />
+          <div style={{ padding: 24, minHeight: 360, background: colorBgContainer, borderRadius: borderRadiusLG }} className='parent'>
+            <div class="div1"><DashboardCard /></div>
+            <div class="div2"> </div>
+            <div class="div3"> </div>
+            <div class="div4"> </div>
           </div>
         </Content>
       </Layout>

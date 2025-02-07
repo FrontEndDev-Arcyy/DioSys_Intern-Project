@@ -13,6 +13,9 @@ import MemorialPage from "../layouts/MemorialPage";
 import BaptismPage from "../layouts/BaptismPage";
 import ConfirmationPage from "../layouts/ConfirmationPage";
 // import CalendarPage from "../layouts/CalendarPage";
+import PageLanding from "../layouts/PageLanding";
+import CommunionPage from "../layouts/CommunionPage";
+import ConversionPage from "../layouts/ConversionPage";
 
 
 export default function Routers() {
@@ -22,7 +25,7 @@ export default function Routers() {
 
                 <Route path="/login" element={<LoginPage />} />
 
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<PageLanding />} />
 
                 <Route path="/matrimony" element={<MatrimonyPage />} />
 
@@ -31,6 +34,10 @@ export default function Routers() {
                 <Route path="/baptism" element={<BaptismPage />} />
 
                 <Route path="/confirmation" element={<ConfirmationPage />} />
+
+                <Route path="/communion" element={<CommunionPage />} />
+
+                <Route path="/conversion" element={<ConversionPage />} />
 
             </Routes>
         </Router>

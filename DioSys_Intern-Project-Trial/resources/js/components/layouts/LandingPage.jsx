@@ -60,6 +60,7 @@ const items = [
 
 const App = () => {
   const [openKeys, setOpenKeys] = useState([]);
+  const [collapsed, setCollapsed] = useState(false);
 
   const onOpenChange = keys => {
     const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
@@ -72,9 +73,9 @@ const App = () => {
 
 return (
     <Layout style={{ minHeight: '100vh' }}>
-        <Sider width={220} style={{ background: '#0D5B10', color: '#0D5B10' }}>
+        <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} width={220} style={{ background: '#0D5B10', color: '#0D5B10' }}>
             <div className="logo" style={{ padding: '16px', textAlign: 'center' }}>
-                    <img src="/logo/A letter Logo design.png" alt="logo" style={{ width: '100%' }} />
+                  <img src="/logo/A letter Logo design.png" alt="logo" style={{ width: '100%' }} />
             </div>
             <Menu
                 mode="inline"

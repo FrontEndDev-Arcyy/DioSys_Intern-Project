@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import ConfirmationModal from "./ConfirmationModal"; // ✅ Import the modal component
+import ConversionModal from "./ConversionModal"; // ✅ Import the modal component
 
 const columns = [
   {
@@ -11,15 +11,15 @@ const columns = [
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Place of Confirmation",
-    dataIndex: "placeOfConfirmation",
-    key: "placeOfConfirmation",
+    title: "Place of Conversion",
+    dataIndex: "placeOfConversion",
+    key: "placeOfConversion",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Date of Confirmation",
-    dataIndex: "dateOfConfirmation",
-    key: "dateOfConfirmation",
+    title: "Date of Conversion",
+    dataIndex: "dateOfConversion",
+    key: "dateOfConversion",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
@@ -44,20 +44,20 @@ const columns = [
 ];
 
 const data = [
-  { key: "1", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "2", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "3", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "4", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "5", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "6", fullName: "Cell Data", placeOfConfirmation: "Cell Data", dateOfConfirmation: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "1", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "2", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "3", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "4", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "5", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "6", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
 ];
 
-const ConfirmationTable = () => {
+const ConversionTable = () => {
   return (
     <div style={{ padding: "20px", background: "white", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
       
       {/* Add Button & Upload File */}
-      <ConfirmationModal /> {/* ✅ Renders the add record button and modal */}
+      <ConversionModal /> {/* ✅ Renders the add record button and modal */}
 
       {/* Search Bar */}
       <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: "10px" }}>
@@ -83,4 +83,4 @@ const ConfirmationTable = () => {
   );
 };
 
-export default ConfirmationTable;
+export default ConversionTable;
