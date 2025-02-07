@@ -77,7 +77,7 @@ const App = () => {
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed} style={{ background: '#0D5B10'}} width={220}>
             <div className="logo" style={{ padding: '16px', textAlign: 'center' }}>
-                  <img src="/logo/A letter Logo design.png" alt="logo" style={{ width: '100%' }} />
+                  <img src="https://placehold.co/195x179" alt="logo" style={{ width: '100%' }} />
             </div>
         <Menu theme="light" defaultSelectedKeys={['']} mode="inline" openKeys={(openKeys)} onOpenChange={handleOpenChange} items={items} style={{ background: '#0D5B10'}} className='customMenu'/>
       </Sider>
