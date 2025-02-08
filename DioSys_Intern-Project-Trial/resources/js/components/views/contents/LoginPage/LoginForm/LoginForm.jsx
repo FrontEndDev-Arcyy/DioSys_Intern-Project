@@ -7,7 +7,7 @@ const Login = () => {
     <div style={{
       width: "100vw",
       height: "100vh",
-      backgroundImage: "url('/logo/A letter Logo design.png')",
+      backgroundImage: "url('/logo/loginpagebg.png')",
       backgroundPosition: "center",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
