@@ -63,7 +63,7 @@ const items = [
   getItem('Accounting', '10', <CreditCardOutlined />, accountItems),
 ];
 
-const App = () => {
+const PageLanding = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [openKeys,setOpenKeys] = useState([]);
   const {
@@ -108,4 +108,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default PageLanding;
