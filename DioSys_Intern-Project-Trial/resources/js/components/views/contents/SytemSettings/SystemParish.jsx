@@ -55,7 +55,7 @@ const SystemParish = () => {
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
             backgroundColor: activeTab === "parish" ? "white" : "#69B31E",
-            color: activeTab === "parish" ? "#69B31E" : "white",
+            color: activeTab === "parish" ? "#0D5B10" : "white",
             fontWeight: "bold",
             cursor: "pointer",
             transition: "0.3s",
@@ -74,7 +74,7 @@ const SystemParish = () => {
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
             backgroundColor: activeTab === "role" ? "white" : "#69B31E",
-            color: activeTab === "role" ? "#69B31E" : "white",
+            color: activeTab === "role" ? "#0D5B10" : "white",
             fontWeight: "bold",
             cursor: "pointer",
             transition: "0.3s",
@@ -92,7 +92,7 @@ const SystemParish = () => {
             borderTopLeftRadius: "8px",
             borderTopRightRadius: "8px",
             backgroundColor: activeTab === "organization" ? "white" : "#69B31E",
-            color: activeTab === "organization" ? "#69B31E" : "white",
+            color: activeTab === "organization" ? "#0D5B10" : "white",
             fontWeight: "bold",
             cursor: "pointer",
             transition: "0.3s",
@@ -164,37 +164,15 @@ const ParishModal = ({ isAddModalOpen, handleAddCancel }) => (
   >
     <Collapse defaultActiveKey={["1", "2"]} expandIcon={({ isActive }) => <DownOutlined rotate={isActive ? 180 : 0} />}>
       {/* Account Information Section */}
-      <Panel header="PARISH GENERAL INFORMATION" key="1" style={{ backgroundColor: "#0D5B10", color: "white", fontWeight: "bold" }}>
+      <Panel header={<span style={{ color: "#FFFFFF", fontWeight: "bold" }}>PARISH GENERAL INFORMATION</span>} key="1" style={{ backgroundColor: "#0D5B10" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "10px" }}>
           <Input placeholder="Name of Parish" />
           <Input placeholder="Titular Patron" />
-          <Input placeholder="Password" type="password" />
-          <Input placeholder="Church Assigned" />
-          <Input placeholder="Role" />
-          <Select placeholder="Position">
-            <Option value="Priest">Priest</Option>
-            <Option value="Clergy">Clergy</Option>
-          </Select>
-        </div>
-      </Panel>
-      {/* Parishioner Information Section */}
-      <Panel header="PARISHIONER INFORMATION" key="2" style={{ backgroundColor: "#0D5B10", color: "white", fontWeight: "bold" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "10px" }}>
-          <Input placeholder="First Name" />
-          <Input placeholder="Middle Name" />
-          <Input placeholder="Last Name" />
-          <Input placeholder="Name Extension" />
-          <Input placeholder="Date of Sacerdotal Ordination" type="date" />
-          <Input placeholder="No. of Years in the Ministry" type="number" />
-          <Input placeholder="Formation" />
-          <Input placeholder="Birthdate" type="date" />
-          <Input placeholder="Age" type="number" />
-          <Select placeholder="Contact No.">
-            <Option value="+1">+1</Option>
-            <Option value="+44">+44</Option>
-          </Select>
+          <Input placeholder="Date of Canonical Erection" type="date" />
+          <Input placeholder="Feast Date" type="date" />
+          <Input placeholder="Address" />
+          <Input placeholder="Contact No." type="number" minLength="11" maxLength="11" />
           <Input placeholder="Email" />
-          <Input placeholder="Job Description" />
         </div>
       </Panel>
     </Collapse>

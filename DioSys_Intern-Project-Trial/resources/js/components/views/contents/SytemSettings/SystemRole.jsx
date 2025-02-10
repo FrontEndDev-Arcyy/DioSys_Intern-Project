@@ -10,7 +10,7 @@ const columns = [
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Action",
+    title: "Actions",
     dataIndex: "Action",
     key: "Action",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
