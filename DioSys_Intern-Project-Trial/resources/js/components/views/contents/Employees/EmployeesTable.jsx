@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import ConversionModal from "./ConversionModal"; //  Import the modal component
+import EmployeesModal from "../Employees/EmployessModal"; // ✅ Import the modal component
 
 const columns = [
   {
@@ -11,21 +11,21 @@ const columns = [
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Place of Conversion",
-    dataIndex: "placeOfConversion",
-    key: "placeOfConversion",
+    title: "Position",
+    dataIndex: "position",
+    key: "position",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Date of Conversion",
-    dataIndex: "dateOfConversion",
-    key: "dateOfConversion",
+    title: "Department",
+    dataIndex: "department",
+    key: "department",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
-    title: "Officiating Priest",
-    dataIndex: "officiatingPriest",
-    key: "officiatingPriest",
+    title: "Date of Hire",
+    dataIndex: "dateOfHire",
+    key: "dateOfHire",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
@@ -38,26 +38,25 @@ const columns = [
     title: "Actions",
     key: "actions",
     render: () => (
-      <span style={{ color: "black" }}></span> // Placeholder for actions
+      <span style={{ color: "black" }}>⚙️</span> // Placeholder for actions
     ),
   },
 ];
 
 const data = [
-  { key: "1", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "2", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "3", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "4", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "5", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
-  { key: "6", fullName: "Cell Data", placeOfConversion: "Cell Data", dateOfConversion: "Cell Data", officiatingPriest: "Cell Data", status: "Cell Data" },
+  { key: "1", fullName: "John Doe", position: "Manager", department: "Sales", dateOfHire: "2020-01-15", status: "Active" },
+  { key: "2", fullName: "Jane Smith", position: "Developer", department: "IT", dateOfHire: "2019-06-23", status: "Active" },
+  { key: "3", fullName: "Michael Johnson", position: "Designer", department: "Marketing", dateOfHire: "2021-09-10", status: "On Leave" },
+  { key: "4", fullName: "Emily Davis", position: "Accountant", department: "Finance", dateOfHire: "2018-04-30", status: "Active" },
+  { key: "5", fullName: "Robert Brown", position: "HR Specialist", department: "Human Resources", dateOfHire: "2017-11-12", status: "Inactive" },
 ];
 
-const ConversionTable = () => {
+const EmployeesTable = () => {
   return (
     <div style={{ padding: "20px", background: "white", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
       
       {/* Add Button & Upload File */}
-      <ConversionModal /> {/* Renders the add record button and modal */}
+      <EmployeesModal /> {/* ✅ Renders the add record button and modal */}
 
       {/* Search Bar */}
       <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: "10px" }}>
@@ -83,4 +82,4 @@ const ConversionTable = () => {
   );
 };
 
-export default ConversionTable;
+export default EmployeesTable;

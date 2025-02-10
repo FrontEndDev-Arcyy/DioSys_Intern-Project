@@ -74,7 +74,7 @@ const TableComponent = () => {
       <Table
         columns={columns}
         dataSource={data}
-        pagination={{ pageSize: 6, showSizeChanger: false }}
+        pagination={{ pageSize: 6, showSizeChanger: false, }}
         style={{
           borderRadius: "10px",
           overflow: "hidden",

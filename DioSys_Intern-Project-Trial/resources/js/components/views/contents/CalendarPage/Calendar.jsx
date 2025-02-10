@@ -1,7 +1,7 @@
 import React from "react";
-import { Calendar, Badge, Button } from "antd";
+import { Calendar, Badge, Button, Layout } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import "./resources/css/app.css"; // Custom CSS for styling
+// import "./resources/css/app.css"; // Custom CSS for styling
 
 const getListData = (value) => {
   let listData = [];
@@ -35,10 +35,11 @@ const App = () => {
   };
 
   return (
-    <div className="calendar-container">
+    <Layout.Content style={{ borderRadius: '14px' }}>
+    <div className="calendar-container" style={{ minWidth: '75vw', minHeight: '70vw', marginLeft: '100px', marginBottom: '100px', backgroundColor: 'white' }}>
       {/* Sidebar Filter */}
-      <div className="filter-panel">
-        <h3>Filter</h3>
+      <div className="filter-panel" style={{ width: '480px', position: 'relative', right: '130px' }}>
+        <h3 style={{ width: '100%' }}>Filter</h3>
         <hr />
       </div>
 
@@ -47,7 +48,7 @@ const App = () => {
         {/* Navigation Buttons */}
         <div className="calendar-header">
           <Button type="text" icon={<LeftOutlined />} />
-          <Button type="primary">Today</Button>
+          <Button type="text" style={{ backgroundColor: 'white', color: 'green', fontWeight: 'bold', fontSize: '20px' }}>Today</Button>
           <Button type="text" icon={<RightOutlined />} />
         </div>
 
@@ -62,6 +63,7 @@ const App = () => {
         <Calendar dateCellRender={dateCellRender} />
       </div>
     </div>
+    </Layout.Content>
   );
 };
 

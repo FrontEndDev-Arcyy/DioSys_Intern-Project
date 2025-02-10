@@ -100,7 +100,7 @@ return (
                                 <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
                                 <Breadcrumb.Item><Link to="">Dashboard</Link></Breadcrumb.Item>
                             </Breadcrumb>
-                <div style={{ padding: 24, background: '#fff', minHeight: 360 }} className="parent">
+                <div style={{ padding: 24, paddingTop: 0, background: '#fff', minHeight: 360, borderRadius: '14px' }} className="parent">
                     <Calendar />
                 </div>
             </Content>

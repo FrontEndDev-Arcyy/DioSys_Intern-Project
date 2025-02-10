@@ -12,19 +12,19 @@ const columns = [
   {
     title: "Baptism Date",
     dataIndex: "baptismDate",
-    key: "bride",
+    key: "baptismDate",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
     title: "Baptismal Place",
     dataIndex: "baptismalPlace",
-    key: "address",
+    key: "baptismalPlace",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
     title: "Officiating Category",
     dataIndex: "officiateCategory",
-    key: "dateMarried",
+    key: "officiateCategory",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
@@ -43,12 +43,12 @@ const columns = [
 ];
 
 const data = [
-  { key: "1", fullName: "Hello", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
-  { key: "2", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
-  { key: "3", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
-  { key: "4", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
-  { key: "5", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
-  { key: "6", groom: "Cell Data", bride: "Cell Data", address: "Cell Data", dateMarried: "Cell Data", category: "Cell Data", status: "Cell Data" },
+  { key: "1", fullName: "Hello", baptismDate: "Cell Data", baptismalPlace: "Cell Data", officiateCategory: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "2", fullName: "Cell Data", baptismDate: "Cell Data", baptismalPlace: "Cell Data", officiateCategory: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "3", fullName: "Cell Data", baptismDate: "Cell Data", baptismalPlace: "Cell Data", officiateCategory: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "4", fullName: "Cell Data", baptismDate: "Cell Data", baptismalPlace: "Cell Data", officiateCategory: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "5", fullName: "Cell Data", baptismDate: "Cell Data", baptismalPlace: "Cell Data", officiateCategory: "Cell Data", status: "Cell Data", actions: "Cell Data" },
+  { key: "6", fullName: "Cell Data", baptismDate: "Cell Data", baptismalPlace: "Cell Data", officiateCategory: "Cell Data", status: "Cell Data", actions: "Cell Data" },
 ];
 
 const TableComponent = () => {
