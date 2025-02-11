@@ -19,6 +19,9 @@ import ConversionPage from "../layouts/ConversionPage";
 import PastoralPage from "../layouts/PastoralPage";
 import EmployeesPage from "../layouts/EmployeesPage";
 import SystemPage from "../layouts/SystemPage";
+import EmailPage from "../layouts/EmailPage";
+import OfficialReceiptPage from "../layouts/OfficialReceiptPage";
+import PayrollPage from "../layouts/PayrollPage";
 
 
 export default function Routers() {
@@ -49,6 +52,12 @@ export default function Routers() {
                 <Route path="/calendar" element={<CalendarPage />} />
 
                 <Route path="/settings" element={<SystemPage />} />
+
+                <Route path="/emails" element={<EmailPage />} />
+
+                <Route path="/receipt" element={<OfficialReceiptPage />} />
+
+                <Route path="/payroll" element={<PayrollPage />} />
 
             </Routes>
         </Router>

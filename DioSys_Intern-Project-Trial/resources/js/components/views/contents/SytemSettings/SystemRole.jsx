@@ -1,6 +1,9 @@
-import React from "react";
-import { Table, Input } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
+import { Table, Input, Card, Button, Modal, Select, Collapse } from "antd";
+import { SearchOutlined, DownOutlined } from "@ant-design/icons";
+
+const { Option } = Select;
+const { Panel } = Collapse;
 
 const columns = [
   {
@@ -11,33 +14,119 @@ const columns = [
   },
   {
     title: "Actions",
-    dataIndex: "Action",
-    key: "Action",
+    dataIndex: "Actions",
+    key: "Actions",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
 ];
 
-const data = [
-  { key: "1", Name: "Cell Data", Date: "Cell Data" },
-  { key: "2", Name: "Cell Data", Date: "Cell Data" },
-  { key: "3", Name: "Cell Data", Date: "Cell Data" },
-  { key: "4", Name: "Cell Data", Date: "Cell Data" },
-  { key: "5", Name: "Cell Data", Date: "Cell Data" },
-  { key: "6", Name: "Cell Data", Date: "Cell Data" },
-];
+const data = Array.from({ length: 6 }, (_, i) => ({
+  key: i + 1,
+  Role: "Cell Data",
+  Actions: "Cell Data",
+}));
 
 const SystemRole = () => {
+  const [activeTab, setActiveTab] = useState("role");
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  const handleAddCancel = () => {
+    setIsAddModalOpen(false);
+  };
+
   return (
-    <div style={{ padding: "20px", background: "white", borderRadius: "10px", boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}>
-      
-      {/* Search Bar */}
-      <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: "20px" }}>
-        <Input
-          placeholder="Search..."
-          prefix={<SearchOutlined />}
-          style={{ width: "200px", borderRadius: "20px" }}
-        />
+    <Card 
+      style={{ 
+        borderRadius: "10px", 
+        background: "#f8f8f8", 
+        padding: "20px", 
+        boxShadow: "0 2px 4px rgba(0,0,0,0.1)", 
+        border: "none"
+      }}
+    >
+      {/* Tab Navigation */}
+      <div style={{ display: "flex", width: "fit-content", gap: "5px", marginBottom: "20px" }}>
+        <div
+          onClick={() => setActiveTab("parish")}
+          style={{
+            width: "181px", 
+            textAlign: "center",
+            padding: "10px 20px",
+            borderTopLeftRadius: "8px",
+            borderTopRightRadius: "8px",
+            backgroundColor: activeTab === "parish" ? "white" : "#69B31E",
+            color: activeTab === "parish" ? "#0D5B10" : "white",
+            fontWeight: "bold",
+            cursor: "pointer",
+            transition: "0.3s",
+            border: activeTab === "parish" ? "none" : "1px solid #69B31E",
+          }}
+        >
+          Parish
+        </div>
+
+        <div
+          onClick={() => setActiveTab("role")}
+          style={{
+            width: "181px", 
+            textAlign: "center",
+            padding: "10px 20px",
+            borderTopLeftRadius: "8px",
+            borderTopRightRadius: "8px",
+            backgroundColor: activeTab === "role" ? "white" : "#69B31E",
+            color: activeTab === "role" ? "#0D5B10" : "white",
+            fontWeight: "bold",
+            cursor: "pointer",
+            transition: "0.3s",
+            border: activeTab === "role" ? "none" : "1px solid #69B31E",
+          }}
+        >
+          Role
+        </div>
+        <div
+          onClick={() => setActiveTab("organization")}
+          style={{
+            width: "181px", 
+            textAlign: "center",
+            padding: "10px 20px",
+            borderTopLeftRadius: "8px",
+            borderTopRightRadius: "8px",
+            backgroundColor: activeTab === "organization" ? "white" : "#69B31E",
+            color: activeTab === "organization" ? "#0D5B10" : "white",
+            fontWeight: "bold",
+            cursor: "pointer",
+            transition: "0.3s",
+            border: activeTab === "organization" ? "none" : "1px solid #69B31E",
+          }}
+        >
+          Organization
+        </div>
       </div>
+
+      {/* Buttons */}
+      <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
+        <Button type="primary" style={{ backgroundColor:"#0D5B10", border: "none" }} onClick={() => setIsAddModalOpen(true)}>
+          + Add Role
+        </Button>
+        <Button type="default" style={{ border: "1px solid green", color: "#FFFFFF", backgroundColor: "#69B31E" }}>
+          Active
+        </Button>
+        <Button type="default" style={{ border: "1px solid #888", color: "#888" }}>
+          Archive
+        </Button>
+      </div>
+
+      {/* Search Input */}
+      <Input
+        placeholder="Search"
+        prefix={<SearchOutlined />}
+        style={{
+          width: "250px",
+          marginBottom: "20px",
+          borderRadius: "20px",
+          border: "1px solid #ddd",
+        }}
+      />
 
       {/* Table */}
       <Table
@@ -46,7 +135,11 @@ const SystemRole = () => {
         pagination={{
           pageSize: 6,
           showSizeChanger: false,
-          showTotal: (total, range) => <span><b>Results</b> {range[0]} to {range[1]} of {total} records</span>,
+          showTotal: (total, range) => (
+            <span>
+              <b>Results</b> {range[0]} to {total} records
+            </span>
+          ),
         }}
         style={{
           borderRadius: "10px",
@@ -54,8 +147,39 @@ const SystemRole = () => {
           border: "1px solid #E0E0E0",
         }}
       />
-    </div>
+
+      {/* Add Role Modal */}
+      <RoleModal isAddModalOpen={isAddModalOpen} handleAddCancel={handleAddCancel} />
+    </Card>
   );
 };
+
+const RoleModal = ({ isAddModalOpen, handleAddCancel }) => (
+  <Modal
+    title="Add Role"
+    open={isAddModalOpen}
+    onCancel={handleAddCancel}
+    footer={null}
+    width={900}
+  >
+    <Collapse defaultActiveKey={["1", "2"]} expandIcon={({ isActive }) => <DownOutlined rotate={isActive ? 180 : 0} />}>
+      {/* Add role Section */}
+      <Panel header={<span style={{ color: "#FFFFFF", fontWeight: "bold" }}>NEW ROLE</span>} key="1" style={{ backgroundColor: "#0D5B10" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+          <Input placeholder="Role Name" />
+        </div>
+      </Panel>
+    </Collapse>
+    {/* Buttons aligned to bottom-right */}
+    <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginTop: "10px" }}>
+      <Button style={{ borderColor: "#0D5B10", color: "#0D5B10", borderRadius: "20px", padding: "8px 20px" }} onClick={handleAddCancel}>
+        Cancel
+      </Button>
+      <Button type="primary" style={{ background: "#73C041", borderColor: "#73C041", color: "white", borderRadius: "20px", padding: "8px 20px" }}>
+        Submit
+      </Button>
+    </div>
+  </Modal>
+);
 
 export default SystemRole;

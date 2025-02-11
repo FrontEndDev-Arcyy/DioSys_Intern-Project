@@ -5,7 +5,7 @@ import { SearchOutlined, DownOutlined } from "@ant-design/icons";
 const { Option } = Select;
 const { Panel } = Collapse;
 
-const columns = [
+const columnsParish = [
   {
     title: "Church",
     dataIndex: "Church",
@@ -20,18 +20,90 @@ const columns = [
   },
 ];
 
+const columnsRole = [
+  {
+    title: "Role",
+    dataIndex: "Role",
+    key: "Role",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+  {
+    title: "Actions",
+    dataIndex: "Actions",
+    key: "Actions",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+];
+
+const columnsOrganization = [
+  {
+    title: "Religious Organization",
+    dataIndex: "religousOrganization",
+    key: "religousOrganization",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+  {
+    title: "Rel. Organization Head",
+    dataIndex: "religousOrganizationHead",
+    key: "religousOrganizationHead",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+  {
+    title: "Organization Coordinator",
+    dataIndex: "organizationCoordinator",
+    key: "organizationCoordinator",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+  {
+    title: "Actions",
+    dataIndex: "Actions",
+    key: "Actions",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+];
+
 const data = Array.from({ length: 6 }, (_, i) => ({
   key: i + 1,
   Church: "Cell Data",
+  Role: "Cell Data",
+  religousOrganization: "Cell Data",
+  religousOrganizationHead: "Cell Data",
+  organizationCoordinator: "Cell Data",
   Actions: "Cell Data",
 }));
 
-const SystemParish = () => {
+const SystemSettings = () => {
   const [activeTab, setActiveTab] = useState("parish");
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const handleAddCancel = () => {
     setIsAddModalOpen(false);
+  };
+
+  const renderTable = () => {
+    switch (activeTab) {
+      case "parish":
+        return <Table columns={columnsParish} dataSource={data} pagination={{ pageSize: 6, showSizeChanger: false, showTotal: (total, range) => (<span><b>Results</b> {range[0]} to {total} records</span>), }} style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid #E0E0E0", }} />;
+      case "role":
+        return <Table columns={columnsRole} dataSource={data} pagination={{ pageSize: 6, showSizeChanger: false, showTotal: (total, range) => (<span><b>Results</b> {range[0]} to {total} records</span>), }} style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid #E0E0E0", }} />;
+      case "organization":
+        return <Table columns={columnsOrganization} dataSource={data} pagination={{ pageSize: 6, showSizeChanger: false, showTotal: (total, range) => (<span><b>Results</b> {range[0]} to {total} records</span>), }} style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid #E0E0E0", }} />;
+      default:
+        return null;
+    }
+  };
+
+  const renderModal = () => {
+    switch (activeTab) {
+      case "parish":
+        return <ParishModal isAddModalOpen={isAddModalOpen} handleAddCancel={handleAddCancel} />;
+      case "role":
+        return <RoleModal isAddModalOpen={isAddModalOpen} handleAddCancel={handleAddCancel} />;
+      case "organization":
+        return <OrganizationModal isAddModalOpen={isAddModalOpen} handleAddCancel={handleAddCancel} />;
+      default:
+        return null;
+    }
   };
 
   return (
@@ -101,12 +173,12 @@ const SystemParish = () => {
         >
           Organization
         </div>
-       </div>
+      </div>
 
       {/* Buttons */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
         <Button type="primary" style={{ backgroundColor:"#0D5B10", border: "none" }} onClick={() => setIsAddModalOpen(true)}>
-          + Add Parish
+          + Add {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
         </Button>
         <Button type="default" style={{ border: "1px solid green", color: "#FFFFFF", backgroundColor: "#69B31E" }}>
           Active
@@ -129,27 +201,10 @@ const SystemParish = () => {
       />
 
       {/* Table */}
-      <Table
-        columns={columns}
-        dataSource={data}
-        pagination={{
-          pageSize: 6,
-          showSizeChanger: false,
-          showTotal: (total, range) => (
-            <span>
-              <b>Results</b> {range[0]} to {total} records
-            </span>
-          ),
-        }}
-        style={{
-          borderRadius: "10px",
-          overflow: "hidden",
-          border: "1px solid #E0E0E0",
-        }}
-      />
+      {renderTable()}
 
-      {/* Add Parish Modal */}
-      <ParishModal isAddModalOpen={isAddModalOpen} handleAddCancel={handleAddCancel} />
+      {/* Add Modal */}
+      {renderModal()}
     </Card>
   );
 };
@@ -159,7 +214,7 @@ const ParishModal = ({ isAddModalOpen, handleAddCancel }) => (
     title="Add Parish"
     open={isAddModalOpen}
     onCancel={handleAddCancel}
-    footer={null}
+    footer={null} 
     width={900}
   >
     <Collapse defaultActiveKey={["1", "2"]} expandIcon={({ isActive }) => <DownOutlined rotate={isActive ? 180 : 0} />}>
@@ -196,4 +251,67 @@ const ParishModal = ({ isAddModalOpen, handleAddCancel }) => (
   </Modal>
 );
 
-export default SystemParish;
+const RoleModal = ({ isAddModalOpen, handleAddCancel }) => (
+  <Modal
+    title="Add Role"
+    open={isAddModalOpen}
+    onCancel={handleAddCancel}
+    footer={null}
+    width={900}
+  >
+    <Collapse defaultActiveKey={["1", "2"]} expandIcon={({ isActive }) => <DownOutlined rotate={isActive ? 180 : 0} />}>
+      {/* Add role Section */}
+      <Panel header={<span style={{ color: "#FFFFFF", fontWeight: "bold" }}>NEW ROLE</span>} key="1" style={{ backgroundColor: "#0D5B10" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+          <Input placeholder="Role Name" />
+        </div>
+      </Panel>
+    </Collapse>
+    {/* Buttons aligned to bottom-right */}
+    <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginTop: "10px" }}>
+      <Button style={{ borderColor: "#0D5B10", color: "#0D5B10", borderRadius: "20px", padding: "8px 20px" }} onClick={handleAddCancel}>
+        Cancel
+      </Button>
+      <Button type="primary" style={{ background: "#73C041", borderColor: "#73C041", color: "white", borderRadius: "20px", padding: "8px 20px" }}>
+        Submit
+      </Button>
+    </div>
+  </Modal>
+);
+const OrganizationModal = ({ isAddModalOpen, handleAddCancel }) => (
+  <Modal
+    title="Add Organization"
+    open={isAddModalOpen}
+    onCancel={handleAddCancel}
+    footer={null}
+    width={900}
+  >
+    <Collapse defaultActiveKey={["1", "2"]} expandIcon={({ isActive }) => 
+<DownOutlined rotate={isActive ? 180 : 0} />}>
+      {/* Organization Information Section */}
+      <Panel header={<span style={{ color: "#FFFFFF", fontWeight: "bold" }}
+>NEW ORGANIZATION</span>} key="1" style={{ backgroundColor: "#0D5B10" }}
+>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 
+"10px", marginBottom: "10px" }}>
+          <Input placeholder="Religious Organization" />
+          <Input placeholder="Rel. Organization Head" />
+          <Input placeholder="Organization Coordinator" />
+        </div>
+      </Panel>
+    </Collapse>
+    {/* Buttons aligned to bottom-right */}
+    <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", 
+marginTop: "10px" }}>
+      <Button style={{ borderColor: "#0D5B10", color: "#0D5B10", 
+borderRadius: "20px", padding: "8px 20px" }} onClick={handleAddCancel}>
+        Cancel
+      </Button>
+      <Button type="primary" style={{ background: "#73C041", borderColor: 
+"#73C041", color: "white", borderRadius: "20px", padding: "8px 20px" }}>
+        Submit
+      </Button>
+    </div>
+  </Modal>
+);
+export default SystemSettings;

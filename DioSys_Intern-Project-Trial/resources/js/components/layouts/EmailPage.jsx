@@ -13,7 +13,8 @@ import {
     UserOutlined
 } from '@ant-design/icons';
 
-import SystemMain from "../views/contents/SytemSettings/SystemMain";
+import EmailTemplateTable from '../views/contents/EmailTemplate/EmailTemplateTable';
+import EmailTemplateModal from '../views/contents/EmailTemplate/EmailTemplateModal';
 import { Breadcrumb, Layout, Menu, theme, Row, Col, Avatar } from 'antd';
 
 const { Header, Content, Sider } = Layout;
@@ -83,11 +84,12 @@ const App = () => {
         <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
-                <Breadcrumb.Item><Link to="">System Settings</Link></Breadcrumb.Item>
-                <Breadcrumb.Item>Parish</Breadcrumb.Item>
+                <Breadcrumb.Item><Link to="">Sacrament</Link></Breadcrumb.Item>
+                <Breadcrumb.Item>Pastoral Records</Breadcrumb.Item>
             </Breadcrumb>
           <div style={{ padding: 24, minHeight: 360, background: colorBgContainer, borderRadius: borderRadiusLG }} >
-            <SystemMain />
+            <EmailTemplateModal />
+            <EmailTemplateTable />
           </div>
         </Content>
       </Layout>

@@ -96,11 +96,11 @@ return (
           </Row>
         </Header>
             <Content style={{ margin: '0 16px' }}>
-                            <Breadcrumb style={{ margin: '16px 0' }}>
-                                <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
-                                <Breadcrumb.Item><Link to="">Dashboard</Link></Breadcrumb.Item>
-                            </Breadcrumb>
-                <div style={{ padding: 24, paddingTop: 0, background: '#fff', minHeight: 360, borderRadius: '14px' }} className="parent">
+                <Breadcrumb style={{ margin: '16px 0' }}>
+                    <Breadcrumb.Item><Link to="/"><HomeOutlined /></Link></Breadcrumb.Item>
+                    <Breadcrumb.Item><Link to="">Calendar</Link></Breadcrumb.Item>
+                </Breadcrumb>
+                <div style={{ padding: 24, paddingTop: 0, background: '#fff', height: 680, borderRadius: '14px', overflowY: 'auto', overflowX: 'hidden' }} className="parent">
                     <Calendar />
                 </div>
             </Content>

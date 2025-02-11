@@ -14,6 +14,15 @@ const columns = [
   },
   {
     title: "Rel.OrganizationHead",
+    dataIndex: "relOrganizationHead",
+    key: "relOrganizationHead",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
+  },
+  {
+    title: "Organization Coordinator",
+    dataindex: "organizationCoordinator",
+    key: "organizationCoordinator",
+    render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
   {
     title: "Actions",
@@ -25,12 +34,14 @@ const columns = [
 
 const data = Array.from({ length: 6 }, (_, i) => ({
   key: i + 1,
-  Church: "Cell Data",
+  religousOrganization: "Cell Data",
+  relOrganizationHead: "Cell Data",
+  organizationCoordinator: "Cell Data",
   Actions: "Cell Data",
 }));
 
-const SystemParish = () => {
-  const [activeTab, setActiveTab] = useState("parish");
+const SystemOrganization = () => {
+  const [activeTab, setActiveTab] = useState("organization");
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const handleAddCancel = () => {
@@ -109,7 +120,7 @@ const SystemParish = () => {
       {/* Buttons */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
         <Button type="primary" style={{ backgroundColor: "#0D5B10", border: "none" }} onClick={() => setIsAddModalOpen(true)}>
-          + Add Parish
+          + Add Organization
         </Button>
         <Button type="default" style={{ border: "1px solid green", color: "#FFFFFF", backgroundColor: "#69B31E" }}>
           Active
@@ -151,52 +162,40 @@ const SystemParish = () => {
         }}
       />
 
-      {/* Add Parish Modal */}
-      <ParishModal isAddModalOpen={isAddModalOpen} handleAddCancel={handleAddCancel} />
+      {/* Add Organization Modal */}
+      <OrganizationModal isAddModalOpen={isAddModalOpen} handleAddCancel={handleAddCancel} />
     </Card>
   );
 };
 
-const ParishModal = ({ isAddModalOpen, handleAddCancel }) => (
+const OrganizationModal = ({ isAddModalOpen, handleAddCancel }) => (
   <Modal
-    title="Add Parish"
+    title="Add Organization"
     open={isAddModalOpen}
     onCancel={handleAddCancel}
     footer={null}
     width={900}
   >
     <Collapse defaultActiveKey={["1", "2"]} expandIcon={({ isActive }) => <DownOutlined rotate={isActive ? 180 : 0} />}>
-      {/* Account Information Section */}
-      <Panel header={<span style={{ color: "#FFFFFF", fontWeight: "bold" }}>PARISH GENERAL INFORMATION</span>} key="1" style={{ backgroundColor: "#0D5B10" }}>
+      {/* Organization Information Section */}
+      <Panel header={<span style={{ color: "#FFFFFF", fontWeight: "bold" }}>NEW ORGANIZATION</span>} key="1" style={{ backgroundColor: "#0D5B10" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "10px" }}>
-          <Input placeholder="Name of Parish" />
-          <Input placeholder="Titular Patron" />
-          <Input placeholder="Date of Canonical Erection" type="date" />
-          <Input placeholder="Feast Date" type="date" />
-          <Input placeholder="Address" />
-          <Input placeholder="Contact No." type="number" minLength="11" maxLength="11" />
-          <Input placeholder="Email" />
+          <Input placeholder="Religious Organization" />
+          <Input placeholder="Rel. Organization Head" />
+          <Input placeholder="Organization Coordinator" />
         </div>
       </Panel>
     </Collapse>
-    {/* Data Privacy Act + Buttons Section */}
-    <div style={{ marginTop: "20px", padding: "15px", border: "1px solid #E0E0E0", borderRadius: "10px", backgroundColor: "#f8f8f8" }}>
-      {/* Data Privacy Act Content */}
-      <h4 style={{ color: "red", fontWeight: "bold", marginBottom: "5px" }}>DATA PRIVACY ACT OF 2012</h4>
-      <p style={{ fontSize: "12px" }}>
-        The processing of personal information shall be subject to compliance with the requirements of the Data Privacy Act of 2012 and other laws allowing disclosure of information and adherence to the principles of transparency, legitimate purpose, and proportionality.
-      </p>
-    </div>
     {/* Buttons aligned to bottom-right */}
     <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px", marginTop: "10px" }}>
       <Button style={{ borderColor: "#0D5B10", color: "#0D5B10", borderRadius: "20px", padding: "8px 20px" }} onClick={handleAddCancel}>
         Cancel
       </Button>
       <Button type="primary" style={{ background: "#73C041", borderColor: "#73C041", color: "white", borderRadius: "20px", padding: "8px 20px" }}>
-        Save
+        Submit
       </Button>
     </div>
   </Modal>
 );
 
-export default SystemParish;
+export default SystemOrganization;

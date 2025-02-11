@@ -35,10 +35,9 @@ const App = () => {
   };
 
   return (
-    <Layout.Content style={{ borderRadius: '14px' }}>
-    <div className="calendar-container" style={{ minWidth: '75vw', minHeight: '70vw', marginLeft: '100px', marginBottom: '100px', backgroundColor: 'white' }}>
+    <div className="calendar-container" style={{ minWidth: '75vw', marginLeft: '90px', backgroundColor: 'white'}}>
       {/* Sidebar Filter */}
-      <div className="filter-panel" style={{ width: '480px', position: 'relative', right: '130px' }}>
+      <div className="filter-panel" style={{ width: '480px', position: 'relative', right: '100px', top: '45px' }}>
         <h3 style={{ width: '100%' }}>Filter</h3>
         <hr />
       </div>
@@ -63,7 +62,6 @@ const App = () => {
         <Calendar dateCellRender={dateCellRender} />
       </div>
     </div>
-    </Layout.Content>
   );
 };
 

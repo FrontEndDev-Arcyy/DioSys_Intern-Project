@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
-const Login = () => {
+const LoginForm = () => {
   return (
     <div style={{
       width: "100vw",
@@ -14,78 +14,97 @@ const Login = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      textAlign: "center"
+      flexDirection: "column",
+      position: "relative"
     }}>
+      {/* Dark Overlay */}
+
+      {/* DIOSYS LOGO */}
       <div style={{
-        background: "rgba(255, 255, 255, 0.95)",
-        padding: "50px 35px",
+        position: "absolute",
+        top: "10%",
+        color: "white",
+        textAlign: "center",
+        zIndex: 2
+      }}>
+        <h1 style={{ fontSize: "80px", fontWeight: "bold", margin: "0", lineHeight: "1" }}>DIOSYS</h1>
+        <p style={{ fontSize: "22px", marginTop: "10px" }}>Diocesan Integrated Operations System</p>
+      </div>
+
+      {/* Login Card */}
+      <div style={{
+        background: "white",
+        padding: "40px",
         borderRadius: "15px",
         width: "420px",
         boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
-        position: "relative"
-        //company name
-     }}>
+        textAlign: "center",
+        position: "relative",
+        zIndex: 2
+      }}>
+        {/* Church Logo */}
         <div style={{
-          position: "absolute",
-          top: "-90px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: "22px",
-          fontWeight: "bold",
-          color: "#004d00",
-          background: "transparent",
-          padding: "10px 20px",
-          borderRadius: "10px",
-          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)"
-        }}>
-          COMPANY NAME
-        </div>
-        <div style={{
-          width: "130px",
-          height: "130px",
+          width: "100px",
+          height: "100px",
           background: "white",
           borderRadius: "50%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           position: "absolute",
-          top: "-65px",
+          top: "-50px",
           left: "50%",
           transform: "translateX(-50%)",
           overflow: "hidden"
         }}>
-          <img src="/logo/A letter Logo design.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src="/logo/church-logo.png" alt="Church Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
         </div>
-        <h2 style={{ color: "rgb(0, 77, 0)", fontWeight: "bold", marginTop: "30px", marginBottom: "10px", fontSize: "20px" }}>
+
+        <h2 style={{ color: "#004d00", fontWeight: "bold", marginTop: "40px", marginBottom: "20px", fontSize: "22px" }}>
           ADMIN PANEL
         </h2>
-        <Form
-          name="login"
-          autoComplete="off"
-          style={{ display: "flex", flexDirection: "column", gap: "18px" }}
-        >
-          <Form.Item
-            name="username"
-            rules={[{ required: true, message: "Please enter your username!" }]}
-          >
-            <Input placeholder="" prefix={<UserOutlined />} style={{ padding: "14px", borderRadius: "8px", fontSize: "16px", background: "#ebfca3"}} />
-          </Form.Item> 
-          <Form.Item
-            name="password"
-            rules={[{ required: true, message: "Please enter your password!" }]}
-          >
-            <Input.Password placeholder="" prefix={<LockOutlined />} style={{ padding: "14px", borderRadius: "15px", fontSize: "16px",background: "#ebfca3" }} />
+
+        {/* Login Form */}
+        <Form name="login" autoComplete="off" style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+          <Form.Item name="username" rules={[{ required: true, message: "Please enter your username!" }]}>
+            <Input
+              placeholder="Username"
+              prefix={<UserOutlined />}
+              style={{
+                padding: "12px",
+                borderRadius: "20px",
+                fontSize: "16px",
+                background: "#ebfca3",
+                width: "100%"
+              }}
+            />
           </Form.Item>
+
+          <Form.Item name="password" rules={[{ required: true, message: "Please enter your password!" }]}>
+            <Input.Password
+              placeholder="Password"
+              prefix={<LockOutlined />}
+              style={{
+                padding: "12px",
+                borderRadius: "20px",
+                fontSize: "16px",
+                background: "#ebfca3",
+                width: "100%"
+              }}
+            />
+          </Form.Item>
+
           <Form.Item>
             <Button type="primary" htmlType="submit" style={{
               width: "100%",
-              padding: "16px",
-              background: "rgb(0, 77, 0)",
+              padding: "10px",
+              background: "#0D5B10",
               color: "white",
               border: "none",
-              borderRadius: "8px",
+              borderRadius: "20px",
               fontWeight: "bold",
-              fontSize: "18px"
+              fontSize: "18px",
+              cursor: "pointer"
             }}>
               Login
             </Button>
@@ -96,4 +115,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
