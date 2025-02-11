@@ -22,6 +22,7 @@ import SystemPage from "../layouts/SystemPage";
 import EmailPage from "../layouts/EmailPage";
 import OfficialReceiptPage from "../layouts/OfficialReceiptPage";
 import PayrollPage from "../layouts/PayrollPage";
+import ProfilePage from "../layouts/ProfilePage";
 
 
 export default function Routers() {
@@ -58,6 +59,8 @@ export default function Routers() {
                 <Route path="/receipt" element={<OfficialReceiptPage />} />
 
                 <Route path="/payroll" element={<PayrollPage />} />
+
+                <Route path="/profile" element={<ProfilePage />} />
 
             </Routes>
         </Router>

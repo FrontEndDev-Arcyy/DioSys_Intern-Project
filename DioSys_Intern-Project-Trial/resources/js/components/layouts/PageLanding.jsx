@@ -32,18 +32,18 @@ function getItem(label, key, icon, children) {
 
 // Define nested menu items using React Router Links
 const sacramentItems = [
-  getItem(<Link to="/matrimony" style={{fontWeight: 'normal'}}>Matrimony Records</Link>, '2-1'),
-  getItem(<Link to="/baptism" style={{fontWeight: 'normal'}}>Baptism Records</Link>, '2-2'),
-  getItem(<Link to="/confirmation" style={{fontWeight: 'normal'}}>Confirmation Records</Link>, '2-3'),
-  getItem(<Link to="/memorial" style={{fontWeight: 'normal'}}>Memorial Records</Link>, '2-4'),
-  getItem(<Link to="/conversion" style={{fontWeight: 'normal'}}>Conversion Records</Link>, '2-5'),
-  getItem(<Link to="/communion" style={{fontWeight: 'normal'}}>Communion Records</Link>, '2-6'),
-  getItem(<Link to="/pastoral" style={{fontWeight: 'normal'}}>Pastoral Life</Link>, '2-7'),
+  getItem(<Link to="/matrimony" style={{fontWeight: 'normal'}}>Matrimony Records</Link>, '3-1'),
+  getItem(<Link to="/baptism" style={{fontWeight: 'normal'}}>Baptism Records</Link>, '3-2'),
+  getItem(<Link to="/confirmation" style={{fontWeight: 'normal'}}>Confirmation Records</Link>, '3-3'),
+  getItem(<Link to="/memorial" style={{fontWeight: 'normal'}}>Memorial Records</Link>, '3-4'),
+  getItem(<Link to="/conversion" style={{fontWeight: 'normal'}}>Conversion Records</Link>, '3-5'),
+  getItem(<Link to="/communion" style={{fontWeight: 'normal'}}>Communion Records</Link>, '3-6'),
+  getItem(<Link to="/pastoral" style={{fontWeight: 'normal'}}>Pastoral Life</Link>, '3-7'),
 ];
 
 const accountItems = [
-  getItem(<Link to="/receipt" style={{fontWeight: 'normal'}}>Official Receipt</Link>, '10-1'),
-  getItem(<Link to="/payroll" style={{fontWeight: 'normal'}}>Payroll</Link>, '10-2'),
+  getItem(<Link to="/receipt" style={{fontWeight: 'normal'}}>Official Receipt</Link>, '11-1'),
+  getItem(<Link to="/payroll" style={{fontWeight: 'normal'}}>Payroll</Link>, '11-2'),
 ];
 
 const servicesItems = [
@@ -52,15 +52,16 @@ const servicesItems = [
 
 const items = [
   getItem(<Link to="/">Dashboard</Link>, '1', <HomeOutlined />),
-  getItem('Sacrament', '2', <FontAwesomeIcon icon={faCross} />, sacramentItems),
-  getItem('Services', '3', <FontAwesomeIcon icon={faChurch} />, servicesItems),
-  getItem(<Link to="/employees">Employees</Link>, '4', <TeamOutlined />),
-  getItem(<Link to="/calendar">Calendar</Link>, '5', <CalendarOutlined />),
-  getItem(<Link to="/reports">Reports</Link>, '6', <ProjectOutlined />),
-  getItem(<Link to="/users">Users</Link>, '7', <UserOutlined />),
-  getItem(<Link to="/settings">System Settings</Link>, '8', <SettingOutlined />),
-  getItem(<Link to="/emails">Email Template</Link>, '9', <MailOutlined />),
-  getItem('Accounting', '10', <CreditCardOutlined />, accountItems),
+  getItem(<Link to="/profile">Profile</Link>, '2', <UserOutlined />),
+  getItem('Sacrament', '3', <FontAwesomeIcon icon={faCross} />, sacramentItems),
+  getItem('Services', '4', <FontAwesomeIcon icon={faChurch} />, servicesItems),
+  getItem(<Link to="/employees">Employees</Link>, '5', <TeamOutlined />),
+  getItem(<Link to="/calendar">Calendar</Link>, '6', <CalendarOutlined />),
+  getItem(<Link to="/reports">Reports</Link>, '7', <ProjectOutlined />),
+  getItem(<Link to="/users">Users</Link>, '8', <UserOutlined />),
+  getItem(<Link to="/settings">System Settings</Link>, '9', <SettingOutlined />),
+  getItem(<Link to="/emails">Email Template</Link>, '10', <MailOutlined />),
+  getItem('Accounting', '11', <CreditCardOutlined />, accountItems),
 ];
 
 const PageLanding = () => {
