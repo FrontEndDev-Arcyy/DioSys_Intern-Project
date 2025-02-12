@@ -10,7 +10,8 @@ import {
     MailOutlined,
     CreditCardOutlined,
     BellOutlined,
-    UserOutlined
+    UserOutlined,
+    BookOutlined
 } from '@ant-design/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCross, faChurch } from '@fortawesome/free-solid-svg-icons';
@@ -62,6 +63,7 @@ const items = [
   getItem(<Link to="/settings">System Settings</Link>, '9', <SettingOutlined />),
   getItem(<Link to="/emails">Email Template</Link>, '10', <MailOutlined />),
   getItem('Accounting', '11', <CreditCardOutlined />, accountItems),
+  getItem(<Link to="/venue">Venue</Link>, '12', <BookOutlined />)
 ];
 
 const PageLanding = () => {

@@ -43,7 +43,7 @@ const columns = [
     title: "Actions",
     key: "actions",
     render: () => (
-      <span style={{ color: "black" }}>⚙️</span> // Using an icon like your image
+      <span style={{ color: "black" }}>⚙️</span> // Placeholder for actions
     ),
   },
 ];

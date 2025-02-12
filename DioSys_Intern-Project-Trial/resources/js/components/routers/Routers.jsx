@@ -23,6 +23,7 @@ import EmailPage from "../layouts/EmailPage";
 import OfficialReceiptPage from "../layouts/OfficialReceiptPage";
 import PayrollPage from "../layouts/PayrollPage";
 import ProfilePage from "../layouts/ProfilePage";
+import ReportPage from "../layouts/ReportPage";
 
 
 export default function Routers() {
@@ -62,6 +63,8 @@ export default function Routers() {
 
                 <Route path="/profile" element={<ProfilePage />} />
 
+                <Route path="/reports" element={<ReportPage />} />
+                
             </Routes>
         </Router>
     );

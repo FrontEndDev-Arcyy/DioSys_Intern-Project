@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal, Input } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
+
 const AddPayrollModal = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isActiveModalOpen, setIsActiveModalOpen] = useState(false);
@@ -76,7 +77,6 @@ const AddPayrollModal = () => {
 
       {/* Add Modal */}
       <Modal 
-        title="Payroll" 
         open={isAddModalOpen} 
         onOk={handleAddOk} 
         onCancel={handleAddCancel}
@@ -84,30 +84,33 @@ const AddPayrollModal = () => {
         footer={null} // Removes default "OK" and "Cancel" buttons
       >
         {/* Employee Details */}
-        <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>PAYROLL</h3>
-        <h4 style={{ color:"#0D5B10", fontWeight: "bold" }}>Employee Details</h4>
+        <h3 style={{ backgroundColor: "#0D5B10", color: "#FFFFFF", padding: "5px", marginTop: "10px", marginBottom: "10px", fontWeight:"bold"}}>PAYROLL</h3>
+        <h4 style={{ color:"#0D5B10", fontWeight: "bold" }}>EMPLOYEE DETAILS</h4>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
           <Input placeholder="Name" />
           <Input placeholder="Monthly Payment" />
           <Input placeholder="Basic (bi-monthly)" />
           <Input placeholder="Holiday" />
           <Input placeholder="Total Gross Payment" />
-          <Input placeholder="Birthdate" type="date" />
         </div>
         {/* Deductions */}
-        <h4 style={{ color:"#0D5B10", fontWeight: "bold" }}>Deductions</h4>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "20px" }}>
-          <Input placeholder="SSS" />
-          <Input placeholder="Insurance" />
-          <Input placeholder="MPL" />
-          <Input placeholder="Others" />
-        </div>
-        <h4 style={{ color:"#0D5B10", fontWeight: "bold" }}>Computations and Summary</h4>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
-          <Input placeholder="Total Deductions" />
-          <Input placeholder="Net Pay" />
-        </div>
-        {/* Action Buttons */}
+          <h4 style={{ color:"#0D5B10", fontWeight: "bold" }}>DEDUCTIONS</h4>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+            <Input placeholder="Cash Loan" />
+            <Input placeholder="SSS" />
+            <select style={{ padding: "8px", borderRadius: "4px", borderColor: "#d9d9d9" }}>
+              <option value="option1">Health Insurance</option>
+              <option value="option2">Philhealth</option>
+            </select>
+            <Input placeholder="MPL" />
+            <Input placeholder="Others" />
+          </div>
+          <h4 style={{ color:"#0D5B10", fontWeight: "bold" }}>COMPUTATION AND SUMMARY</h4>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+            <Input placeholder="Total Deductions" />
+            <Input placeholder="Net Pay" />
+          </div>
+          {/* Action Buttons */}
         <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
           <Button style={{ borderColor: "#0D5B10", color: "#0D5B10" }} onClick={handleAddCancel}>Cancel</Button>
           <Button type="primary" style={{ background: "#0D5B10", borderColor: "#0D5B10" }}>Submit</Button>

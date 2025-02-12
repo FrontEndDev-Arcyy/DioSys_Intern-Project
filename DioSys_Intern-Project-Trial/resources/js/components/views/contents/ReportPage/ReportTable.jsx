@@ -1,7 +1,7 @@
-import React from "react";
-import { Table, Input } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
-import EmployeesModal from "../Employees/EmployessModal"; // ✅ Import the modal component
+import React, { useState } from "react";
+import { Table } from "antd";
+import ReportDropdown from "./ReportDropdown";
+import ReportPrint from "./ReportPrint";
 
 const columns = [
   {
@@ -10,7 +10,6 @@ const columns = [
     key: "ServiceTitle",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
-  
   {
     title: "Booking Date",
     dataIndex: "BookingDate",
@@ -23,29 +22,37 @@ const columns = [
     key: "status",
     render: (text) => <span style={{ color: "black" }}>{text}</span>,
   },
-  
 ];
 
 const data = [
-  { key: "1", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Cell Data" },
-  { key: "2", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Cell Data" },
-  { key: "3", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Cell Data" },
-  { key: "4", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Cell Data" },
-  { key: "5", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Cell Data" },
+  { key: "1", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Pending" },
+  { key: "2", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Approved" },
+  { key: "3", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Pending" },
+  { key: "4", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Rejected" },
+  { key: "5", ServiceTitle: "Cell Data", BookingDate: "Cell Data", status: "Approved" },
 ];
 
 const ReportTable = () => {
+  const [filter, setFilter] = useState(""); // State for dropdown filter
+
+  // Apply filter to table data
+  const filteredData = filter
+    ? data.filter((item) => item.status.toLowerCase() === filter)
+    : data;
+
   return (
     <div style={{ padding: "20px", background: "white", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
       
-     
-    
-      
+      {/* Align Dropdown and Print Button to the Top Left */}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "start", gap: "10px", marginBottom: "15px" }}>
+        <ReportDropdown onFilterChange={setFilter} />
+        <ReportPrint />
+      </div>
 
-      /* Table */
+      {/* Table */}
       <Table
         columns={columns}
-        dataSource={data}
+        dataSource={filteredData}
         pagination={{ pageSize: 6, showSizeChanger: false }}
         style={{
           borderRadius: "10px",
