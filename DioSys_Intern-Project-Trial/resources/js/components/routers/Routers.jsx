@@ -24,6 +24,8 @@ import OfficialReceiptPage from "../layouts/OfficialReceiptPage";
 import PayrollPage from "../layouts/PayrollPage";
 import ProfilePage from "../layouts/ProfilePage";
 import ReportPage from "../layouts/ReportPage";
+import VenuePage from "../layouts/VenuePage";
+import UserPage from "../layouts/UserPage";
 
 
 export default function Routers() {
@@ -64,6 +66,10 @@ export default function Routers() {
                 <Route path="/profile" element={<ProfilePage />} />
 
                 <Route path="/reports" element={<ReportPage />} />
+
+                <Route path="/venue" element={<VenuePage/>}/>
+
+                <Route path="/users" element={<UserPage/>}/>
                 
             </Routes>
         </Router>

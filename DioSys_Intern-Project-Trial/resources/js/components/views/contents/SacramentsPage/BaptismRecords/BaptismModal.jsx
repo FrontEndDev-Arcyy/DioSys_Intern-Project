@@ -37,7 +37,7 @@ const AddRecordModal = () => {
             padding: "8px 20px",
           }}
         >
-           Add
+           Add Baptism
         </Button>
 
         <Upload beforeUpload={() => false} showUploadList={false}>
@@ -99,20 +99,30 @@ const AddRecordModal = () => {
   width={800}
   footer={null} //  Removes default "OK" and "Cancel" buttons
 >
+  <p>Parishioner's Name</p>
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "10px" }}>
+  <Input placeholder="" />
+  <Button type="primary" style={{ background: "#73C041", borderColor: "#73C041", width: '150px', borderRadius: '20px' }}>Add Profile</Button>
+  </div>
   {/* Parishioner Information */}
   <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>PARISHIONER INFORMATION</h3>
   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
     <Input placeholder="First Name" />
     <Input placeholder="Middle Name" />
     <Input placeholder="Last Name" />
-    <Input placeholder="Gender" />
-    <Input placeholder="Residence" />
-    <Input placeholder="Birthdate" type="date" />
+    <Input placeholder="Date of Birth" type="date" />
+    <Input placeholder="Age" />
     <Input placeholder="Place of Birth" />
-    <Input placeholder="Place of Death" />
-    <Input placeholder="Date of Death" type="date" />
-    <Input placeholder="Age at the Time of Death" />
-    <Input placeholder="E-mail" />
+    <Input placeholder="Gender" />
+    <Input placeholder="Citizenship" />
+    <Input placeholder="Religion" />
+    <Input placeholder="Civil Status" />
+    <Input placeholder="Country" />
+    <Input placeholder="State/Province" />
+    <Input placeholder="City/Municipality" />
+    <Input placeholder="Zipcode" />
+    <Input placeholder="Barangay" />
+    <Input placeholder="Complete Address" />
   </div>
 
   {/* Parents Information */}
@@ -166,7 +176,7 @@ const AddRecordModal = () => {
     <Input placeholder="Residence" />
   </div>
 
-  <Button type="primary" style={{ background: "#0D5B10", borderColor: "#0D5B10", display:"flex", justifySelf:"end" }}>Add Godparent</Button>
+  <Button type="primary" style={{ background: "#0D5B10", borderColor: "#0D5B10", display:"flex", justifySelf:"end" }}>Add another godparent</Button>
 
   {/* Data Privacy */}
   <div style={{ background: "#FAFAFA", border: "1px solid #E0E0E0", padding: "10px", borderRadius: "5px", marginBottom: "10px", marginTop: "10px" }}>

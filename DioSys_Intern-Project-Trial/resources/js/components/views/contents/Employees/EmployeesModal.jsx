@@ -32,22 +32,6 @@ const EmployeesModal = () => {
         <div style={{ display: "flex", gap: "10px" }}>
           <Button
             type="primary"
-            icon={<FilterOutlined />} // ✅ Filter icon
-            onClick={showFilterModal}
-            style={{
-              backgroundColor: "#0D5B10",
-              borderColor: "#0D5B10",
-              color: "white",
-              fontWeight: "bold",
-              borderRadius: "20px",
-              padding: "8px 20px",
-            }}
-          >
-            Filter
-          </Button>
-
-          <Button
-            type="primary"
             onClick={showAddModal}
             style={{
               backgroundColor: "#0D5B10",

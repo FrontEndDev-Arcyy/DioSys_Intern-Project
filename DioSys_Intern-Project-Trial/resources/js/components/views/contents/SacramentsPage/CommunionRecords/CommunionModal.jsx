@@ -37,7 +37,7 @@ const AddRecordModal = () => {
             padding: "8px 20px",
           }}
         >
-           Add
+           Add Communion
         </Button>
 
         <Upload beforeUpload={() => false} showUploadList={false}>
@@ -143,11 +143,13 @@ const AddRecordModal = () => {
   </div>
 
   {/* Communion Information */}
-  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>BURIAL INFORMATION</h3>
+  <h3 style={{ backgroundColor: "#0D5B10", color: "white", padding: "5px", marginTop: "10px", marginBottom: "10px" }}>COMMUNION INFORMATION</h3>
   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px", marginBottom: "10px" }}>
     <Input placeholder="Date of Conversion" type="date" />
     <Input placeholder="Place of Conversion" />
     <Input placeholder="Officiating Priest" />
+    <Input placeholder="Book No." />
+    <Input placeholder="Page No." />
   </div>
 
   {/* Data Privacy */}

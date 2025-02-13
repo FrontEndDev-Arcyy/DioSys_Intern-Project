@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import EmployeesModal from "../Employees/EmployessModal"; // ✅ Import the modal component
+import EmployeesModal from "../Employees/EmployeesModal"; 
 
 const columns = [
   {
