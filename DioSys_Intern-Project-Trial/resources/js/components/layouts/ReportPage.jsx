@@ -11,7 +11,7 @@ import {
     CreditCardOutlined,
     BellOutlined,
     UserOutlined
-} from '@ant-design/icons';
+} from '@ant-design/icons'; 
 
 import ReportTable from '../views/contents/ReportPage/ReportTable'; 
 import { Breadcrumb, Layout, Menu, theme, Row, Col, Avatar } from 'antd';
